@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GameScreenController">
+    <children>
+        <Button fx:id="quitButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#quitButton" style="-fx-background-color: Crimson;" text="Quit" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="roundStatsButton" layoutX="701.0" layoutY="14.0" mnemonicParsing="false" onAction="#roundStatsButton" style="-fx-background-color: dimgray;" text="Round Stats" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Pane layoutX="15.0" layoutY="117.0" prefHeight="200.0" prefWidth="771.0">
+            <children>
+                <HBox fx:id="BankerHBox" prefHeight="200.0" prefWidth="433.0" spacing="10.0">
+                    <children>
+                        <ImageView fx:id="bankerLeftCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Cards/blue-back.png" />
+                            </image></ImageView>
+                        <ImageView fx:id="bankerRightCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Cards/blue-back.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin></ImageView>
+                        <ImageView fx:id="bankerExtraCard" fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" style="visibility: hidden;">
+                            <image>
+                                <Image url="@Cards/blue-back.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="275.0" right="10.0" top="20.0" />
+                    </padding></HBox>
+                <Label fx:id="bankerWinLabel" layoutX="619.0" layoutY="87.0" textFill="#60b31d">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></Label>
+            </children></Pane>
+        <Pane fx:id="bankerPane" layoutX="144.0" layoutY="46.0" prefHeight="71.0" prefWidth="512.0">
+            <children>
+                <Label layoutX="213.0" layoutY="17.0" text="Banker">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font></Label>
+            </children></Pane>
+        <Pane fx:id="playerPane" layoutX="144.0" layoutY="515.0" prefHeight="71.0" prefWidth="512.0">
+            <children>
+                <Label layoutX="213.0" layoutY="17.0" text="Player">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="15.0" layoutY="317.0" prefHeight="200.0" prefWidth="771.0">
+            <children>
+                <HBox fx:id="PlayerHBox" prefHeight="200.0" prefWidth="561.0" spacing="10.0">
+                    <children>
+                        <ImageView fx:id="playerLeftCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Cards/red-back.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="playerRightCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Cards/red-back.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="playerExtraCard" fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" style="visibility: hidden;">
+                            <image>
+                                <Image url="@Cards/red-back.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="275.0" right="10.0" top="20.0" />
+                    </padding></HBox>
+                <Label fx:id="playerWinLabel" layoutX="622.0" layoutY="87.0" textFill="#60b31d">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children></Pane>
+        <Pane layoutX="15.0" layoutY="607.0" prefHeight="179.0" prefWidth="791.0">
+            <children>
+                <Label fx:id="winningsLabel" layoutX="14.0" layoutY="51.0" prefHeight="27.0" prefWidth="241.0" text="Winnings: ">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="playerBidText" layoutX="14.0" layoutY="93.0" prefHeight="38.0" prefWidth="241.0" promptText="Player Bid">
+                    <font>
+                        <Font name="Calibri" size="16.0" />
+                    </font></TextField>
+                <Button fx:id="startButton" layoutX="583.0" layoutY="86.0" mnemonicParsing="false" onAction="#startButtonAction" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #60b31d;" text="Start" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></Button>
+                <ToggleButton fx:id="bankerToggleButton" layoutX="298.0" layoutY="93.0" mnemonicParsing="false" onAction="#toggleButton" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: orange;" text="Banker" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></ToggleButton>
+                <ToggleButton fx:id="playerToggleButton" layoutX="418.0" layoutY="93.0" mnemonicParsing="false" onAction="#toggleButton" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: orange;" text="Player" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </ToggleButton>
+            </children></Pane>
+        <Line endX="812.3999633789062" endY="626.0" opacity="0.26" startX="-5.7220458984375E-6" startY="626.0" />
+        <Line endX="803.0999755859375" endY="311.0" layoutX="10.0" layoutY="7.0" startX="-10.000005722045898" startY="311.0" stroke="GOLDENROD" />
+    </children>
+</AnchorPane>
